@@ -1,0 +1,115 @@
+import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const projects = [
+  {
+    title: "HeartFelt",
+    category: "Mobile & Web Application",
+    description: "HeartFelt lets you preserve your cherished memories through beautiful digital keepsakes, perfect for honoring life's most meaningful moments.",
+    image: "linear-gradient(135deg, hsl(186 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
+    imageUrl: "assets/projects/Heartfelt.png",
+    tags: ["React Native", "Node.js", "PostgreSQL"],
+  },
+  {
+    title: "ROAC | Rise of All Carriers",
+    category: "Web Application",
+    description: "Multi-vendor marketplace with seamless payment integration and inventory management.",
+    image: "linear-gradient(135deg, hsl(270 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
+    imageUrl: "assets/projects/theroac.png",
+    tags: ["Next.js", "Node.js", "Stripe", "PostgreSQL"],
+  },
+  {
+    title: "Neuros",
+    category: "Web Application",
+    description: "Artificial Intelligence refers to the development of computer systems that can perform tasks that would typically require human intelligence.",
+    image: "linear-gradient(135deg, hsl(150 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
+    imageUrl: "assets/projects/Neuros.png",
+    tags: ["React TypeScript", "Node.js",],
+  },
+  {
+    title: "FitFathom",
+    category: "HTML PWA Application",
+    description: "FitFathom is a Progressive Web App (PWA) designed to help users track their fitness journey with ease and convenience.",
+    image: "linear-gradient(135deg, hsl(30 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
+    imageUrl: "assets/projects/FitFathom.png",
+    tags: ["HTML", "CSS", "JavaScript", "PWA"],
+  },
+];
+
+const Projects = () => {
+  return (
+    <section id="projects" className="py-12 section-gradient">
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+          <div>
+            <span className="inline-block px-4 py-2 rounded-full bg-secondary border border-border text-sm text-primary font-mono mb-4">
+              Our Projects
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              Featured <span className="gradient-text">Case Studies</span>
+            </h2>
+          </div>
+          <Button variant="heroOutline" size="lg">
+            View All Projects
+            <ExternalLink className="ml-2 w-4 h-4" />
+          </Button>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={project.title}
+              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 hover-lift"
+            >
+              {/* Project Image/Gradient */}
+              <div
+                className="h-64 w-full relative"
+                style={{ background: project.image }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-full object-fill"
+                  />
+                </div>
+                
+                {/* Floating icon */}
+                <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                  <ArrowUpRight className="w-5 h-5 text-primary" />
+                </div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6">
+                <span className="text-sm text-primary font-mono mb-2 block">
+                  {project.category}
+                </span>
+                <h3 className="text-2xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-secondary text-xs text-muted-foreground border border-border"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
