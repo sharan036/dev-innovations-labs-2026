@@ -1,33 +1,40 @@
 import { Code, Smartphone, Cloud, Shield, Database, Cpu, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: Code,
+    slug: "webdevelopment",
     title: "Web Development",
     description: "Custom web applications built with cutting-edge technologies for optimal performance and scalability.",
   },
   {
     icon: Smartphone,
+    slug: "mobiledevelopment",
     title: "Mobile Development",
     description: "Native and cross-platform mobile apps that deliver exceptional user experiences on iOS and Android.",
   },
   {
     icon: Cloud,
+    slug: "cloudsolutions",
     title: "Cloud Solutions",
     description: "Scalable cloud infrastructure and migration services to modernize your business operations.",
   },
   {
     icon: Shield,
+    slug: "cybersecurity",
     title: "Cybersecurity",
     description: "Comprehensive security solutions to protect your digital assets and ensure data privacy.",
   },
   {
     icon: Database,
+    slug: "dataanalytics",
     title: "Data Analytics",
     description: "Transform raw data into actionable insights with our advanced analytics and BI solutions.",
   },
   {
     icon: Cpu,
+    slug: "aimachinelearning",
     title: "AI & Machine Learning",
     description: "Intelligent automation and AI-powered solutions to drive innovation and efficiency.",
   },
@@ -48,7 +55,7 @@ const Services = () => {
             <span className="gradient-text">Innovative Solutions</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We offer comprehensive IT services designed to accelerate your digital 
+            We offer comprehensive IT services designed to accelerate your digital
             transformation and drive sustainable growth.
           </p>
         </div>
@@ -56,9 +63,10 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={`/services?type=${service.slug}`}
               key={service.title}
-              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover-lift"
+              className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover-lift cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:glow-cyan-sm transition-all duration-300">
@@ -73,7 +81,7 @@ const Services = () => {
               <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
                 <ArrowUpRight className="w-5 h-5 text-primary" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -82,3 +90,4 @@ const Services = () => {
 };
 
 export default Services;
+

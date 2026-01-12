@@ -23,8 +23,8 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
-              At Dev Innovation Labs, we are dedicated to providing innovative IT solutions 
-              that drive business success. Our expert team delivers cutting-edge technology 
+              At Dev Innovation Labs, we are dedicated to providing innovative IT solutions
+              that drive business success. Our expert team delivers cutting-edge technology
               services tailored to your unique needs.
             </p>
 
@@ -61,45 +61,51 @@ const Hero = () => {
             <div className="relative z-10">
               {/* Abstract Tech Graphic */}
               <div className="relative">
-                <div className="w-full aspect-square mx-auto">
+                <div className="w-full aspect-square mx-auto flex items-center justify-center">
                   {/* Main circle */}
                   <img
-                    src="assets/portrait.png"
+                    src="assets/l2.png"
                     alt="Hero Graphic"
-                    className="w-[530px] h-[530px] object-contain absolute inset-16 animate-float"
+                    className="w-3/4 max-w-[350px] aspect-square object-contain z-10 animate-float"
                   />
                   <div className="absolute inset-0 rounded-full border border-border/30 animate-pulse"></div>
                   <div className="absolute inset-8 rounded-full border border-primary/20"></div>
                   <div className="absolute inset-16 rounded-full border border-primary/30"></div>
                   <div className="absolute inset-24 rounded-full bg-primary/10 glow-cyan animate-float"></div>
                   {/* Floating elements */}
-                  <div className="absolute top-10 right-10 w-16 h-16 rounded-lg bg-card border border-border p-3 animate-float" style={{ animationDelay: "0.5s" }}>
-                    <div className="w-full h-full rounded bg-primary/20 flex items-center justify-center">
-                      <div className="w-4 h-4 rounded bg-primary"></div>
+                  <div className="hidden lg:block absolute top-8 right-8 w-14 h-14 rounded-2xl bg-white/90 backdrop-blur-md border border-white shadow-xl shadow-blue-500/10 p-3 animate-float-slow" style={{ animationDelay: '0.5s' }}>
+                    <div className="w-full h-full rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
                     </div>
                   </div>
-                  
-                  <div className="absolute bottom-20 left-0 w-20 h-20 rounded-lg bg-card border border-border p-3 animate-float" style={{ animationDelay: "1s" }}>
-                    <div className="space-y-2">
-                      <div className="h-2 bg-primary/40 rounded"></div>
-                      <div className="h-2 bg-primary/20 rounded w-3/4"></div>
-                      <div className="h-2 bg-primary/10 rounded w-1/2"></div>
+
+                  <div className="hidden lg:block absolute bottom-12 left-8 w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-md border border-white shadow-xl shadow-purple-500/10 p-3 animate-float" style={{ animationDelay: '1s' }}>
+                    <div className="space-y-1">
+                      <div className="h-2 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
+                      <div className="h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full w-3/4"></div>
+                      <div className="h-2 bg-blue-200 rounded-full w-1/2"></div>
                     </div>
                   </div>
-                  
-                  <div className="absolute top-1/2 -right-4 w-24 h-16 rounded-lg bg-card border border-border p-3 animate-float" style={{ animationDelay: "1.5s" }}>
+
+                  <div className="hidden lg:flex absolute top-1/2 right-0 -translate-y-1/2 w-20 h-14 rounded-2xl bg-white/90 backdrop-blur-md border border-white shadow-xl shadow-cyan-500/10 p-3 animate-float-reverse" style={{ animationDelay: '1.5s' }}>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-primary/20"></div>
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
                       <div className="space-y-1">
-                        <div className="h-1.5 w-8 bg-foreground/20 rounded"></div>
-                        <div className="h-1.5 w-6 bg-primary/40 rounded"></div>
+                        <div className="h-1.5 w-6 bg-gray-300 rounded"></div>
+                        <div className="h-1.5 w-4 bg-blue-400 rounded"></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
           </div>

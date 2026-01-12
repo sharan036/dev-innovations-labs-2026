@@ -9,6 +9,7 @@ const projects = [
     image: "linear-gradient(135deg, hsl(186 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
     imageUrl: "assets/projects/Heartfelt.png",
     tags: ["React Native", "Node.js", "PostgreSQL"],
+    url: "https://theheartfelt.in/",
   },
   {
     title: "ROAC | Rise of All Carriers",
@@ -17,6 +18,7 @@ const projects = [
     image: "linear-gradient(135deg, hsl(270 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
     imageUrl: "assets/projects/theroac.png",
     tags: ["Next.js", "Node.js", "Stripe", "PostgreSQL"],
+    url: "https://www.theroac.com/",
   },
   {
     title: "Neuros",
@@ -25,6 +27,7 @@ const projects = [
     image: "linear-gradient(135deg, hsl(150 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
     imageUrl: "assets/projects/Neuros.png",
     tags: ["React TypeScript", "Node.js",],
+    url: "https://neurosai.in/home/",
   },
   {
     title: "FitFathom",
@@ -33,6 +36,7 @@ const projects = [
     image: "linear-gradient(135deg, hsl(30 100% 50% / 0.2) 0%, hsl(216 50% 15%) 100%)",
     imageUrl: "assets/projects/FitFathom.png",
     tags: ["HTML", "CSS", "JavaScript", "PWA"],
+    url: "https://fitfathom.com/",
   },
 ];
 
@@ -59,9 +63,12 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={project.title}
-              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 hover-lift"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 hover-lift block"
             >
               {/* Project Image/Gradient */}
               <div
@@ -104,7 +111,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
