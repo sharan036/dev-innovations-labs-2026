@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Code, Smartphone, Cloud, Shield, Database, Cpu, Search, ChevronRight, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Code, Smartphone, Cloud, Shield, Database, Cpu, Search, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
@@ -65,33 +65,30 @@ const ServicePage = () => {
         s.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const contactInfo = [
-        { icon: Mail, label: "Email", value: "hr@devinnovations.co.in", href: "mailto:hr@devinnovations.co.in" },
-        { icon: Phone, label: "Phone", value: "+91 79739 77956", href: "tel:+917973977956" },
-        { icon: MapPin, label: "Office", value: "356, Sector 48A, Chandigarh, IN 160047" },
-        { icon: Clock, label: "Hours", value: "Mon - Fri: 10:00 AM - 7:00 PM" },
-    ];
-
     return (
-        <div className="min-h-screen flex flex-col bg-background">
-            <Header />
+        <div className="min-h-screen flex flex-col bg-background" style={{ backgroundColor: "#d6dae5" }}>
+            {/* Header with matching color */}
+            <div className="[&_header]:bg-[#c8ced9]/90 [&_header]:backdrop-blur-lg [&_header]:border-[#b8bfcc] [&_header]:text-gray-800 [&_a]:text-gray-700 [&_a:hover]:text-primary">
+                <Header />
+            </div>
+
             <main className="flex-1 pt-[80px]">
                 <div className="container mx-auto px-4 lg:px-8 py-8">
                     {/* Breadcrumb */}
                     <nav className="flex items-center gap-2 text-sm mb-6">
-                        <Link to="/" className="text-white hover:text-primary transition-colors">
+                        <Link to="/" className="text-gray-600 hover:text-primary transition-colors">
                             Home
                         </Link>
-                        <ChevronRight className="w-4 h-4 text-white" />
-                        <Link to="/services?type=webdevelopment" className="text-white hover:text-primary transition-colors">
+                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                        <Link to="/services?type=webdevelopment" className="text-gray-600 hover:text-primary transition-colors">
                             Services
                         </Link>
-                        <ChevronRight className="w-4 h-4 text-white" />
-                        <span className="text-white font-medium">{currentService.title}</span>
+                        <ChevronRight className="w-4 h-4 text-gray-400" />
+                        <span className="text-gray-900 font-medium">{currentService.title}</span>
                     </nav>
 
                     {/* Page Title */}
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
                         {currentService.title}
                     </h1>
 
@@ -112,7 +109,7 @@ const ServicePage = () => {
 
                             {/* Service Description */}
                             <div className="prose prose-lg max-w-none">
-                                <p className="text-white leading-relaxed text-lg">
+                                <p className="text-gray-700 leading-relaxed text-lg">
                                     {currentService.fullDescription}
                                 </p>
                             </div>
@@ -158,34 +155,62 @@ const ServicePage = () => {
                             </div>
 
                             {/* Contact Card */}
-                            <div className="group relative mt-6 p-8 rounded-2xl bg-card border border-border">
+                            <div className="bg-[#0a1628] rounded-2xl p-6 mt-6 shadow-sm">
                                 <h3 className="text-xl font-bold text-white mb-6">Contact</h3>
 
                                 <div className="space-y-4">
-                                    {contactInfo.map((info) => (
-                                        <div key={info.label} className="flex gap-4 w-max">
-                                            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                                            <info.icon className="w-5 h-5 text-primary" />
-                                            </div>
-                                            <div>
-                                            <p className="text-sm text-muted-foreground">{info.label}</p>
-                                            {info.href ? (
-                                                <a href={info.href} className="font-medium hover:text-primary">
-                                                {info.value}
-                                                </a>
-                                            ) : (
-                                                <p className="font-medium">{info.value}</p>
-                                            )}
-                                            </div>
+                                    {/* Phone */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center shadow-sm">
+                                            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            </svg>
                                         </div>
-                                    ))}
+                                        <span className="text-gray-300 text-sm">+91 7973 977 956</span>
+                                    </div>
+
+                                    {/* Email */}
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center shadow-sm">
+                                            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-gray-300 text-sm">contact@devinnovationslabs.com</span>
+                                    </div>
+
+                                    {/* Address */}
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center shadow-sm flex-shrink-0 mt-0.5">
+                                            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-gray-300 text-sm">Punjab, India</span>
+                                    </div>
+                                </div>
+
+                                {/* Logo */}
+                                <div className="mt-6 pt-4 border-t border-gray-700">
+                                    <div className="w-fit p-1 rounded-lg bg-white shadow-sm">
+                                        <img
+                                            src="assets/Logo-dil.png"
+                                            alt="Dev Innovations Labs"
+                                            className="h-10 object-contain"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-            <Footer />
+
+            {/* Footer with matching color */}
+            <div className="[&_footer]:bg-[#c8ced9] [&_footer]:border-[#b8bfcc] [&_footer]:text-gray-800 [&_footer_a]:text-gray-700 [&_footer_a:hover]:text-primary [&_footer_h4]:text-gray-900 [&_footer_p]:text-gray-700">
+                <Footer />
+            </div>
         </div>
     );
 };
