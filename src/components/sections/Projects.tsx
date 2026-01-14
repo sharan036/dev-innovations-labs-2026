@@ -1,5 +1,6 @@
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
@@ -41,6 +42,7 @@ const projects = [
 ];
 
 const Projects = () => {
+  const navigate = useNavigate();
   return (
     <section id="projects" className="py-12 section-gradient">
       <div className="container mx-auto px-4 lg:px-8">
@@ -54,7 +56,7 @@ const Projects = () => {
               Featured <span className="gradient-text">Case Studies</span>
             </h2>
           </div>
-          <Button variant="heroOutline" size="lg">
+          <Button variant="heroOutline" size="lg" onClick={() => navigate("/projects")}>
             View All Projects
             <ExternalLink className="ml-2 w-4 h-4" />
           </Button>
