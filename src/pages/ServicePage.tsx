@@ -12,48 +12,48 @@ const services = [
         slug: "webdevelopment",
         title: "Web Development",
         description: "Custom web applications built with cutting-edge technologies for optimal performance and scalability.",
-        fullDescription: "Web development is a crucial service for any IT company. As technology evolves, more and more businesses are moving online to reach their target audience. Therefore, having a strong web presence is essential for businesses to stay competitive. Our expert team delivers cutting-edge web applications using modern technologies like React, Next.js, Node.js, and more. We focus on creating responsive, scalable, and high-performance web solutions tailored to your unique business needs.",
-        image: "assets/web-development.jpg"
+        fullDescription: "Web development is a crucial service for any IT company. As technology evolves, more and more businesses are moving online to reach their target audience. Therefore, having a strong web presence is essential for businesses to stay competitive. Our expert team delivers cutting-edge web applications using modern technologies like React, Next.js, Node.js, and more. We focus on creating responsive, scalable, and high-performance web solutions tailored to your unique business needs.\n\nOur web development services encompass the entire development lifecycle, from initial concept and design to deployment and ongoing maintenance. We specialize in creating dynamic, interactive websites that engage users and drive conversions. Whether you need a corporate website, an e-commerce platform, a custom web application, or a progressive web app (PWA), our team has the expertise to bring your vision to life.\n\nWe follow industry best practices including responsive design, SEO optimization, accessibility standards (WCAG), and performance optimization. Our development process includes thorough testing, code reviews, and quality assurance to ensure your website performs flawlessly across all devices and browsers. We also provide comprehensive documentation and training to help your team manage and update your website effectively.",
+        image: "assets/projects/services/web-development.jpg"
     },
     {
         icon: Smartphone,
         slug: "mobiledevelopment",
         title: "Mobile Development",
         description: "Native and cross-platform mobile apps that deliver exceptional user experiences on iOS and Android.",
-        fullDescription: "Mobile development is a crucial service for any IT company. As technology evolves, more and more people are using mobile devices to access the internet and carry out daily activities. Therefore, having a mobile presence is essential for businesses to reach their target audience. Our team specializes in creating native iOS and Android applications, as well as cross-platform solutions using React Native and Flutter. We ensure your mobile app delivers exceptional user experiences across all devices.",
-        image: "assets/mobile-development.jpg"
+        fullDescription: "Mobile development is a crucial service for any IT company. As technology evolves, more and more people are using mobile devices to access the internet and carry out daily activities. Therefore, having a mobile presence is essential for businesses to reach their target audience. Our team specializes in creating native iOS and Android applications, as well as cross-platform solutions using React Native and Flutter. We ensure your mobile app delivers exceptional user experiences across all devices.\n\nOur mobile development expertise covers everything from concept design to app store deployment. We create intuitive, user-friendly interfaces that keep users engaged while maintaining optimal performance and battery efficiency. Our apps are built with scalability in mind, allowing them to grow alongside your business needs.\n\nWe integrate essential features such as push notifications, offline functionality, payment gateways, social media connectivity, and real-time synchronization. Our team also handles app store optimization (ASO) to maximize visibility and downloads. Post-launch, we provide continuous support, bug fixes, and feature updates to keep your app competitive in the ever-evolving mobile landscape.",
+        image: "assets/projects/services/android-development.jpg"
     },
     {
         icon: Cloud,
         slug: "cloudsolutions",
         title: "Cloud Solutions",
         description: "Scalable cloud infrastructure and migration services to modernize your business operations.",
-        fullDescription: "Cloud solutions are essential for modern businesses looking to scale and optimize their operations. Our cloud services include infrastructure setup, migration, and management on major platforms like AWS, Azure, and Google Cloud. We help businesses reduce costs, improve scalability, and enhance security through comprehensive cloud strategies tailored to your specific requirements.",
-        image: "assets/cloud-solutions.jpg"
+        fullDescription: "Cloud solutions are essential for modern businesses looking to scale and optimize their operations. Our cloud services include infrastructure setup, migration, and management on major platforms like AWS, Azure, and Google Cloud. We help businesses reduce costs, improve scalability, and enhance security through comprehensive cloud strategies tailored to your specific requirements.\n\nOur cloud expertise spans infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS) implementations. We design and implement cloud architectures that are resilient, cost-effective, and aligned with your business objectives. Our migration services ensure smooth transitions from legacy systems to cloud environments with minimal downtime.\n\nWe specialize in containerization using Docker and Kubernetes, serverless computing, microservices architecture, and DevOps automation. Our team also provides 24/7 monitoring, disaster recovery planning, and continuous optimization to ensure your cloud infrastructure operates at peak efficiency. We help you leverage cloud-native features to accelerate innovation while maintaining strict security and compliance standards.",
+        image: "assets/projects/services/cloud.jpg"
     },
     {
         icon: Shield,
         slug: "cybersecurity",
         title: "Cybersecurity",
         description: "Comprehensive security solutions to protect your digital assets and ensure data privacy.",
-        fullDescription: "Cybersecurity is paramount in today's digital landscape. Our comprehensive security solutions protect your business from cyber threats, data breaches, and unauthorized access. We offer vulnerability assessments, penetration testing, security audits, and implementation of robust security protocols to safeguard your digital assets and ensure compliance with industry standards.",
-        image: "assets/cybersecurity.jpg"
+        fullDescription: "Cybersecurity is paramount in today's digital landscape. Our comprehensive security solutions protect your business from cyber threats, data breaches, and unauthorized access. We offer vulnerability assessments, penetration testing, security audits, and implementation of robust security protocols to safeguard your digital assets and ensure compliance with industry standards.\n\nOur cybersecurity services cover the entire spectrum of digital protection, including network security, endpoint protection, identity and access management, and security information and event management (SIEM). We conduct thorough risk assessments to identify vulnerabilities and develop customized security strategies that address your specific threat landscape.\n\nWe help organizations achieve compliance with regulations such as GDPR, HIPAA, PCI-DSS, and ISO 27001. Our incident response team is available around the clock to address security breaches and minimize their impact. We also provide security awareness training for your employees, as human error remains one of the leading causes of security incidents. Our proactive approach includes continuous monitoring, threat intelligence, and regular security updates to stay ahead of emerging threats.",
+        image: "assets/projects/services/cyber-security.jpg"
     },
     {
         icon: Database,
         slug: "dataanalytics",
         title: "Data Analytics",
         description: "Transform raw data into actionable insights with our advanced analytics and BI solutions.",
-        fullDescription: "Data Analytics transforms raw data into actionable business insights. Our services include data warehousing, business intelligence, predictive analytics, and custom dashboard development. We help organizations make data-driven decisions by uncovering patterns, trends, and insights that drive growth and operational efficiency.",
-        image: "assets/data-analytics.jpg"
+        fullDescription: "Data Analytics transforms raw data into actionable business insights. Our services include data warehousing, business intelligence, predictive analytics, and custom dashboard development. We help organizations make data-driven decisions by uncovering patterns, trends, and insights that drive growth and operational efficiency.\n\nOur data analytics capabilities encompass the entire data lifecycle, from collection and storage to analysis and visualization. We design and implement robust data pipelines that aggregate information from multiple sources, ensuring data quality and consistency. Our team leverages advanced tools and technologies including Python, R, SQL, Tableau, Power BI, and Apache Spark.\n\nWe specialize in creating interactive dashboards and reports that provide real-time visibility into your key performance indicators. Our predictive analytics models help you forecast trends, optimize operations, and identify opportunities before your competitors. We also offer machine learning solutions for advanced analytics use cases such as customer segmentation, churn prediction, and demand forecasting. Our goal is to empower your organization with the insights needed to make informed strategic decisions.",
+        image: "assets/projects/services/data-analytics.jpg"
     },
     {
         icon: Cpu,
         slug: "aimachinelearning",
         title: "AI & Machine Learning",
         description: "Intelligent automation and AI-powered solutions to drive innovation and efficiency.",
-        fullDescription: "AI and Machine Learning are revolutionizing how businesses operate. Our AI solutions include natural language processing, computer vision, predictive modeling, and intelligent automation. We help businesses leverage the power of artificial intelligence to streamline operations, enhance customer experiences, and gain competitive advantages in their industries.",
-        image: "assets/ai-ml.jpg"
+        fullDescription: "AI and Machine Learning are revolutionizing how businesses operate. Our AI solutions include natural language processing, computer vision, predictive modeling, and intelligent automation. We help businesses leverage the power of artificial intelligence to streamline operations, enhance customer experiences, and gain competitive advantages in their industries.\n\nOur AI expertise spans from proof-of-concept development to production-ready solutions. We build custom machine learning models tailored to your specific business challenges, whether it's automating customer support with intelligent chatbots, detecting fraud in real-time, or optimizing supply chain operations. Our team uses cutting-edge frameworks including TensorFlow, PyTorch, and scikit-learn.\n\nWe also specialize in generative AI solutions, including large language model (LLM) integration, content generation, and AI-assisted workflows. Our computer vision solutions enable applications such as quality inspection, facial recognition, and document processing. We ensure all our AI solutions are explainable, ethical, and aligned with your organizational values. From strategy consulting to model deployment and monitoring, we provide end-to-end AI services that deliver measurable business outcomes.",
+        image: "assets/projects/services/ai.jpg"
     },
 ];
 
@@ -104,17 +104,35 @@ const ServicePage = () => {
                         {/* Left Content - Main Content */}
                         <div className="lg:col-span-2">
                             {/* Service Image */}
-                            <div className="rounded-2xl overflow-hidden mb-8 bg-gray-300 aspect-video flex items-center justify-center">
-                                <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center">
-                                    <currentService.icon className="w-12 h-12 text-primary" />
-                                </div>
+                            <div className="rounded-2xl overflow-hidden mb-8 bg-gray-300 aspect-video">
+                                <img
+                                    src={`/${currentService.image}`}
+                                    alt={currentService.title}
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        // Fallback to placeholder if image fails to load
+                                        const target = e.target as HTMLImageElement;
+                                        target.style.display = 'none';
+                                        target.parentElement!.innerHTML = `
+                                            <div class="w-full h-full flex items-center justify-center">
+                                                <div class="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center">
+                                                    <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }}
+                                />
                             </div>
 
                             {/* Service Description */}
-                            <div className="prose prose-lg max-w-none">
-                                <p className="text-gray-700 leading-relaxed text-lg">
-                                    {currentService.fullDescription}
-                                </p>
+                            <div className="prose prose-lg max-w-none space-y-4">
+                                {currentService.fullDescription.split('\n\n').map((paragraph, index) => (
+                                    <p key={index} className="text-gray-700 leading-relaxed text-lg text-justify">
+                                        {paragraph}
+                                    </p>
+                                ))}
                             </div>
                         </div>
 

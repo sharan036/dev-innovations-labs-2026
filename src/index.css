@@ -141,17 +141,17 @@
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite backwards;
     will-change: transform;
   }
 
   .animate-float-slow {
-    animation: floatSlow 8s ease-in-out infinite;
+    animation: floatSlow 8s ease-in-out infinite backwards;
     will-change: transform;
   }
 
   .animate-float-reverse {
-    animation: floatReverse 7s ease-in-out infinite;
+    animation: floatReverse 7s ease-in-out infinite backwards;
     will-change: transform;
   }
 
