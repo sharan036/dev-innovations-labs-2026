@@ -2,52 +2,105 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, DollarSign, ArrowRight, Briefcase, Users, Zap, Heart } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const openPositions = [
   {
-    id: 1,
-    title: "Senior Full-Stack Developer",
-    department: "Engineering",
-    location: "Remote / Tech City",
-    type: "Full-time",
-    salary: "$120k - $160k",
-    description: "Build scalable web applications using React, Node.js, and cloud technologies.",
-  },
-  {
-    id: 2,
-    title: "UI/UX Designer",
-    department: "Design",
-    location: "Remote",
-    type: "Full-time",
-    salary: "$90k - $130k",
-    description: "Create beautiful, intuitive interfaces for our client projects.",
-  },
-  {
-    id: 3,
-    title: "DevOps Engineer",
-    department: "Infrastructure",
-    location: "Hybrid",
-    type: "Full-time",
-    salary: "$130k - $170k",
-    description: "Manage and optimize our cloud infrastructure and CI/CD pipelines.",
-  },
-  {
-    id: 4,
-    title: "Product Manager",
-    department: "Product",
-    location: "Remote",
-    type: "Full-time",
-    salary: "$110k - $150k",
-    description: "Drive product strategy and work closely with engineering and design teams.",
-  },
-  {
-    id: 5,
-    title: "Junior Frontend Developer",
+    id: "FE-FRESHER",
+    title: "Frontend Developer (React / Next.js)",
     department: "Engineering",
     location: "Remote",
-    type: "Full-time",
-    salary: "$70k - $90k",
-    description: "Learn and grow while building modern React applications.",
+    type: "Fresher",
+    description:
+      "Build responsive web applications using React, Next.js, TypeScript, and modern UI frameworks.",
+  },
+  {
+    id: "FE-EXP",
+    title: "Senior Frontend Developer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Experienced",
+    description:
+      "Lead frontend architecture, optimize performance, and mentor junior developers.",
+  },
+  {
+    id: "BE-FRESHER",
+    title: "Backend Developer (Node.js)",
+    department: "Engineering",
+    location: "Remote",
+    type: "Fresher",
+    description:
+      "Develop secure REST APIs, database integrations, and scalable backend services.",
+  },
+  {
+    id: "BE-EXP",
+    title: "Senior Backend Developer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Experienced",
+    description:
+      "Design microservices, optimize databases, and maintain production infrastructure.",
+  },
+  {
+    id: "FS-EXP",
+    title: "Full Stack Developer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Experienced",
+    description:
+      "Work across frontend, backend, databases, and cloud infrastructure.",
+  },
+  {
+    id: "ML-FRESHER",
+    title: "Machine Learning Engineer",
+    department: "AI & Data",
+    location: "Remote",
+    type: "Fresher",
+    description:
+      "Train, evaluate, and deploy machine learning models for real-world products.",
+  },
+  {
+    id: "AI-EXP",
+    title: "AI Engineer",
+    department: "AI & Data",
+    location: "Remote",
+    type: "Experienced",
+    description:
+      "Build AI-powered applications using LLMs, RAG systems, and intelligent automation.",
+  },
+  {
+    id: "CS-EXP",
+    title: "Cyber Security Analyst",
+    department: "Security",
+    location: "Remote",
+    type: "Experienced",
+    description:
+      "Perform security audits, penetration testing, and infrastructure hardening.",
+  },
+  {
+    id: "HR-FRESHER",
+    title: "HR Executive",
+    department: "Human Resources",
+    location: "Remote",
+    type: "Fresher",
+    description:
+      "Manage recruitment, onboarding, employee engagement, and HR operations.",
+  },
+  {
+    id: "BDE-FRESHER",
+    title: "Business Development Executive",
+    department: "Sales",
+    location: "Remote",
+    type: "Fresher",
+    description:
+      "Generate leads, build client relationships, and support company growth initiatives.",
   },
 ];
 
@@ -85,6 +138,75 @@ const benefits = [
 ];
 
 const Careers = () => {
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [resume, setResume] = useState<File | null>(null);
+  const [selectedJob, setSelectedJob] = useState<any>(null);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    coverLetter: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!selectedJob) return;
+
+    try {
+      setLoading(true);
+
+      const data = new FormData();
+
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("phone", formData.phone);
+      data.append("linkedin", formData.linkedin);
+      data.append("coverLetter", formData.coverLetter);
+      data.append("id", selectedJob.id);
+      data.append("title", selectedJob.title);
+      data.append("location", selectedJob.location);
+
+      if (resume) {
+        data.append("resume", resume);
+      }
+
+      const response = await fetch(
+        "https://app-3rconxdx6q-uc.a.run.app/hiring",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+
+      const result = await response.text();
+
+      if (!response.ok) {
+        throw new Error(result);
+      }
+
+      alert("Application submitted successfully!");
+
+      setOpen(false);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        linkedin: "",
+        coverLetter: "",
+      });
+
+      setResume(null);
+    } catch (error: any) {
+      alert(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -180,15 +302,17 @@ const Careers = () => {
                           <Clock className="w-4 h-4" />
                           {position.type}
                         </span>
-                        <span className="flex items-center gap-1">
-                          <DollarSign className="w-4 h-4" />
-                          {position.salary}
-                        </span>
                       </div>
                     </div>
-                    <Button variant="heroOutline" className="shrink-0 group/btn">
+                    <Button
+                      variant="heroOutline"
+                      onClick={() => {
+                        setSelectedJob(position);
+                        setOpen(true);
+                      }}
+                    >
                       Apply Now
-                      <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                      <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
                 </div>
@@ -207,7 +331,98 @@ const Careers = () => {
           </div>
         </section>
       </main>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>
+              Apply for {selectedJob?.title}
+            </DialogTitle>
 
+            <DialogDescription>
+              Complete the form below to submit your application.
+            </DialogDescription>
+          </DialogHeader>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              className="w-full border rounded-md p-3"
+              placeholder="Full Name"
+              required
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+            />
+
+            <input
+              type="email"
+              className="w-full border rounded-md p-3"
+              placeholder="Email Address"
+              required
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+            />
+
+            <input
+              className="w-full border rounded-md p-3"
+              placeholder="Phone Number"
+              required
+              value={formData.phone}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
+            />
+
+            <input
+              className="w-full border rounded-md p-3"
+              placeholder="LinkedIn URL"
+              required
+              value={formData.linkedin}
+              onChange={(e) =>
+                setFormData({ ...formData, linkedin: e.target.value })
+              }
+            />
+
+            <textarea
+              rows={5}
+              className="w-full border rounded-md p-3"
+              placeholder="Cover Letter"
+              required
+              value={formData.coverLetter}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  coverLetter: e.target.value,
+                })
+              }
+            />
+
+            <div>
+              <label className="text-sm font-medium block mb-2">
+                Resume (PDF/DOC/DOCX)
+              </label>
+
+              <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={(e) =>
+                  setResume(e.target.files?.[0] || null)
+                }
+              />
+            </div>
+
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Submit Application"}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
       <Footer />
     </div>
   );
